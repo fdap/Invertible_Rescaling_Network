@@ -62,10 +62,10 @@ DIV2K_data
 
 ```bash
 # 单卡训练
-用法：bash run_standalone_train.sh [SCALE] [DATASET_GT_PATH]
+python train.py -opt ./src/options/train/train_IRN_x4.yml
 
 # 单卡评估
-用法：bash run_eval.sh [SCALE] [DATASET_PATH] [CHECKPOINT_PATH]
+python val.py -opt ./src/options/test/test_IRN_x4.yml
 ```
 
 ## 脚本说明
@@ -108,12 +108,13 @@ DIV2K_data
 
 ### 训练脚本用法
 
+在[/src/options/train/train_IRN_x4.yml](./src/options/train/train_IRN_x4.yml)中可以配置缩放倍数、数据集路径等参数。
 ```bash
 python train.py -opt ./src/options/train/train_IRN_x4.yml
 ```
 
 ### 评估脚本用法
-
+在[/src/options/test/test_IRN_x4.yml](./src/options/test/test_IRN_x4.yml)中可以配置缩放倍数、数据集路径、保存的模型路径等参数。
 对训练好的模型进行精度评估：
 
 ```bash
